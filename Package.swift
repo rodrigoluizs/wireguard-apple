@@ -16,12 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "WireGuardKit",
-            dependencies: ["WireGuardKitGo", "WireGuardKitC"],
-            // Xcode 16+/26 build Swift with explicit modules by default, which
-            // fails to precompile the WireGuardKitC Clang module because its old
-            // header uses BSD types (u_int32_t, ...) without importing their
-            // Darwin submodule. Fall back to implicit modules for this package.
-            swiftSettings: [.unsafeFlags(["-disable-explicit-modules"])]
+            dependencies: ["WireGuardKitGo", "WireGuardKitC"]
         ),
         .target(
             name: "WireGuardKitC",

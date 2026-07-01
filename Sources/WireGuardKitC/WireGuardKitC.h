@@ -3,6 +3,7 @@
 
 #include "key.h"
 #include "x25519.h"
+#include <sys/types.h>   // u_int32_t/u_char/u_int16_t (required under explicit modules, Xcode 16+/26)
 
 /* From <sys/kern_control.h> */
 #define CTLIOCGINFO 0xc0644e03UL
